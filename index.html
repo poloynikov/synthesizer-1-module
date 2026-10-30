@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fec5e5" />
+    <meta
+      name="description"
+      content="Slaythesizer — an original, kiss-powered hyperpop synthesizer."
+    />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <title>Slaythesizer</title>
+  </head>
+  <body>
+    <main class="rectangle" aria-label="Slaythesizer synthesizer">
+      <div class="content">
+        <header class="header">
+          <h1 class="title">Slaythesizer</h1>
+          <div class="playButtons" role="group" aria-label="Playback">
+            <button
+              class="play"
+              type="button"
+              aria-label="Play synthesizer"
+              title="Play"
+            >
+              <img src="images/Play.svg" alt="" draggable="false" />
+            </button>
+            <button
+              class="stop"
+              type="button"
+              aria-label="Stop synthesizer"
+              title="Stop"
+            >
+              <img src="images/Stop.svg" alt="" draggable="false" />
+            </button>
+          </div>
+        </header>
+
+        <section class="master-controls" aria-label="Master audio controls">
+          <label class="master-label" for="masterVolume">Master volume</label>
+          <div class="master-slider-wrap">
+            <input
+              class="kiss-slider master-slider"
+              id="masterVolume"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="70"
+              aria-label="Master volume"
+            />
+          </div>
+          <output class="master-value" id="masterValue" for="masterVolume"
+            >70%</output
+          >
+        </section>
+
+        <section class="instrumentsButtons" aria-label="Instrument mixer">
+          <article
+            class="instrument-card column1"
+            data-instrument="drums"
+            aria-label="Drums controls"
+          >
+            <button
+              class="instrument-button drumsButton active"
+              type="button"
+              aria-pressed="true"
+            >
+              Drums
+            </button>
+            <div class="fx-row drumsF" aria-label="Drums effects">
+              <button
+                class="fx-button drums-fx1"
+                type="button"
+                aria-pressed="false"
+              >
+                Distortion
+              </button>
+              <button
+                class="fx-button drums-fx2"
+                type="button"
+                aria-pressed="false"
+              >
+                Reverb
+              </button>
+            </div>
+            <div class="sliders" role="group" aria-label="Drums parameters">
+              <label class="slider-row"
+                ><span class="slider-name">Volume</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="82"
+                  data-param="volume"
+                  aria-label="Drums volume"
+                />
+                <output class="slider-value" data-value="volume">82%</output>
+              </label>
+              <label class="slider-row"
+                ><span class="slider-name">Frequency</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="60"
+                  max="160"
+                  step="1"
+                  value="100"
+                  data-param="frequency"
+                  aria-label="Drums frequency"
+                />
+                <output class="slider-value" data-value="frequency"
+                  >100%</output
+                >
+              </label>
+              <label class="slider-row"
+                ><span class="slider-name">Speed</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="50"
+                  max="200"
+                  step="5"
+                  value="100"
+                  data-param="speed"
+                  aria-label="Drums speed"
+                />
+                <output class="slider-value" data-value="speed">1.00×</output>
+              </label>
+            </div>
+          </article>
+
+          <article
+            class="instrument-card column2"
+            data-instrument="bass"
+            aria-label="Bass controls"
+          >
+            <button
+              class="instrument-button bassButton active"
+              type="button"
+              aria-pressed="true"
+            >
+              Bass
+            </button>
+            <div class="fx-row bassF" aria-label="Bass effects">
+              <button
+                class="fx-button bass-fx1"
+                type="button"
+                aria-pressed="false"
+              >
+                Phaser
+              </button>
+              <button
+                class="fx-button bass-fx2"
+                type="button"
+                aria-pressed="false"
+              >
+                Vibrato
+              </button>
+            </div>
+            <div class="sliders" role="group" aria-label="Bass parameters">
+              <label class="slider-row"
+                ><span class="slider-name">Volume</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="80"
+                  data-param="volume"
+                  aria-label="Bass volume"
+                />
+                <output class="slider-value" data-value="volume">80%</output>
+              </label>
+              <label class="slider-row"
+                ><span class="slider-name">Frequency</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="60"
+                  max="160"
+                  step="1"
+                  value="100"
+                  data-param="frequency"
+                  aria-label="Bass frequency"
+                />
+                <output class="slider-value" data-value="frequency"
+                  >100%</output
+                >
+              </label>
+              <label class="slider-row"
+                ><span class="slider-name">Speed</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="50"
+                  max="200"
+                  step="5"
+                  value="100"
+                  data-param="speed"
+                  aria-label="Bass speed"
+                />
+                <output class="slider-value" data-value="speed">1.00×</output>
+              </label>
+            </div>
+          </article>
+
+          <article
+            class="instrument-card column3"
+            data-instrument="chords"
+            aria-label="Chords controls"
+          >
+            <button
+              class="instrument-button chordsButton active"
+              type="button"
+              aria-pressed="true"
+            >
+              Chords
+            </button>
+            <div class="fx-row chordsF" aria-label="Chords effects">
+              <button
+                class="fx-button chords-fx1 active"
+                type="button"
+                aria-pressed="true"
+              >
+                Chorus
+              </button>
+              <button
+                class="fx-button chords-fx2"
+                type="button"
+                aria-pressed="false"
+              >
+                Pitch
+              </button>
+            </div>
+            <div class="sliders" role="group" aria-label="Chords parameters">
+              <label class="slider-row"
+                ><span class="slider-name">Volume</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="67"
+                  data-param="volume"
+                  aria-label="Chords volume"
+                />
+                <output class="slider-value" data-value="volume">67%</output>
+              </label>
+              <label class="slider-row"
+                ><span class="slider-name">Frequency</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="60"
+                  max="160"
+                  step="1"
+                  value="100"
+                  data-param="frequency"
+                  aria-label="Chords frequency"
+                />
+                <output class="slider-value" data-value="frequency"
+                  >100%</output
+                >
+              </label>
+              <label class="slider-row"
+                ><span class="slider-name">Speed</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="50"
+                  max="200"
+                  step="5"
+                  value="100"
+                  data-param="speed"
+                  aria-label="Chords speed"
+                />
+                <output class="slider-value" data-value="speed">1.00×</output>
+              </label>
+            </div>
+          </article>
+
+          <article
+            class="instrument-card column4"
+            data-instrument="melody"
+            aria-label="Melody controls"
+          >
+            <button
+              class="instrument-button melodyButton active"
+              type="button"
+              aria-pressed="true"
+            >
+              Melody
+            </button>
+            <div class="fx-row melodyF" aria-label="Melody effects">
+              <button
+                class="fx-button melody-fx1"
+                type="button"
+                aria-pressed="false"
+              >
+                Phaser
+              </button>
+              <button
+                class="fx-button melody-fx2"
+                type="button"
+                aria-pressed="false"
+              >
+                Pitch
+              </button>
+            </div>
+            <div class="sliders" role="group" aria-label="Melody parameters">
+              <label class="slider-row"
+                ><span class="slider-name">Volume</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="72"
+                  data-param="volume"
+                  aria-label="Melody volume"
+                />
+                <output class="slider-value" data-value="volume">72%</output>
+              </label>
+              <label class="slider-row"
+                ><span class="slider-name">Frequency</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="60"
+                  max="160"
+                  step="1"
+                  value="100"
+                  data-param="frequency"
+                  aria-label="Melody frequency"
+                />
+                <output class="slider-value" data-value="frequency"
+                  >100%</output
+                >
+              </label>
+              <label class="slider-row"
+                ><span class="slider-name">Speed</span>
+                <input
+                  class="kiss-slider"
+                  type="range"
+                  min="50"
+                  max="200"
+                  step="5"
+                  value="100"
+                  data-param="speed"
+                  aria-label="Melody speed"
+                />
+                <output class="slider-value" data-value="speed">1.00×</output>
+              </label>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
